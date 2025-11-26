@@ -19,7 +19,7 @@ print("Dobások:", dobasok)
 print()
 
 #1.Volt-e 6-os a dobások között:
-print("Volt-e 6-os a dobások között?")
+print("1. Volt-e 6-os a dobások között?")
 
 try:
     hatos_dobas = dobasok[0].index(6)
@@ -29,17 +29,21 @@ except ValueError as e:
 print()
 
 #2.Hányadikra sikerült először 18-nál nagyobbat dobni:
-print("Hányadikra sikerült először 18-nál nagyobbat dobni?")
+print("2. Hányadikra sikerült először 18-nál nagyobbat dobni?")
+
+tznyoc_nagyobb = [num for num in dobasok[0] if num > 18]
+min_tznyoc = min(tznyoc_nagyobb)
+print(f"Nagyobb számok, mint 18: {tznyoc_nagyobb}")
 
 try:
-    elso_tznyoc = dobasok[0].index(18) + 1 #+1 mert az indexelés 1-től kezdődik
-    print(f"Az első 18-as dobás a(z) a {elso_tznyoc}. dobás volt.")
+    elso_tznyoc = dobasok[0].index(19) + 1 #+1 mert az indexelés 1-től kezdődik
+    print(f"Az első 18-nál nagyobb dobás a(z) a {elso_tznyoc}. dobás volt, ami a(z) {min_tznyoc} volt.")
 except ValueError as e:
     print(f"{e} \nNem volt ilyen dobás.")
 print()
 
 #3.Hány darab 1-est dobtak:
-print("Hány darab 1-est dobtak?")
+print("3. Hány darab 1-est dobtak?")
 
 try:
     egyesek = [num for num in dobasok[0] if num == 1]
